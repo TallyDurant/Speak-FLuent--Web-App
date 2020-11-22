@@ -1,0 +1,62 @@
+{% extends "login-base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1>REGISTER</h1>
+</div>
+<div class="row justify-content-center register-items">     
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group my-7">
+            {{ form.studentNumber(class_="form-control", size=32) }}
+            {{ form.studentNumber.label(class_="floating-label") }}
+            {% for error in form.studentNumber.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="form-group mb-7">
+            {{ form.email(class_="form-control", size=64) }}
+            {{ form.email.label(class_="floating-label") }}
+            {% for error in form.email.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div> 
+        <div class="form-group mb-7">
+            {{ form.firstName(class_="form-control", size=64) }}
+            {{ form.firstName.label(class_="floating-label") }}
+            {% for error in form.firstName.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div> 
+        <div class="form-group mb-7">
+            {{ form.lastName(class_="form-control", size=64) }}
+            {{ form.lastName.label(class_="floating-label") }}
+            {% for error in form.lastName.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div> 
+        
+        <div class="form-group mb-7">
+            {{ form.password(class_="form-control", size=32) }}
+            {{ form.password.label(class_="floating-label") }}
+            {% for error in form.password.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="form-group mb-5">
+            {{ form.password2(class_="form-control", size=32) }}
+            {{ form.password2.label(class_="floating-label") }}
+            {% for error in form.password2.errors %}
+            <span class="error">*{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            {{ form.submit(class="login-btn") }}
+        </div>
+    </form>
+    <p id="sign-in">
+        Already have an account? <a href="{{ url_for('login') }}">Click here to sign in!</a>
+    </p>
+</div>
+
+{% endblock %}
