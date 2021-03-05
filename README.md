@@ -1,2 +1,3 @@
-# Oral Test App
- CITS3200
+Speak Fluent
+Web Application for Foreign Language Assesment.
+Suitable for Online Learning
